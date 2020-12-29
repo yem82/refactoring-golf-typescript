@@ -1,5 +1,5 @@
 import {Takehomecalculator} from "./takehomecalculator";
-import { Money } from "./Money";
+import { Money } from "./money";
 
 
 describe('TakeHomeCalculator', () => {

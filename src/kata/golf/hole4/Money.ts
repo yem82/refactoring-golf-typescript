@@ -1,7 +1,5 @@
 import { Incalculable } from "./incalculable";
-
-//hole 4
-export class Money {
+class Money {
     public value: number;
     public currency: string;
 
@@ -18,3 +16,10 @@ export class Money {
         return new Money(this.value + other.value, other.currency);
     }
 }
+
+//hole 4
+let money = function money(amount: number, currency: string){
+    return new Money(Math.trunc(amount), currency)
+}
+
+export { Money, money } 
