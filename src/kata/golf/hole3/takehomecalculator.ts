@@ -13,7 +13,7 @@ export class Money {
 }
 
 export class Takehomecalculator {
-    private percent: number
+    private percent: number;
 
     constructor(percent: number) {
         this.percent = percent;
@@ -22,11 +22,7 @@ export class Takehomecalculator {
     netAmount(first: Money, ...rest : Money[] ): Money {
 
         const monies: Array<Money> = Array.from(rest);
-        let total: Money = first
-
-        for (let next of monies) {
-
-        }
+        let total: Money = first;
 
         for (const next of monies) {
             total = this.plus(total, next)
