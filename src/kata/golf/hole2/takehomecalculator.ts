@@ -1,12 +1,13 @@
 import {Incalculable} from "./incalculable";
 //hole 2
-export class Money{
+
+export class Money {
     public value: number;
     public currency: string;
 
-    constructor(first: number, second: string) {
-        this.value = first;
-        this.currency = second;
+    constructor(value: number, currency: string) {
+        this.value = value;
+        this.currency = currency;
     }
 }
 
@@ -19,16 +20,16 @@ export class Takehomecalculator {
 
     netAmount(first: Money, ...rest : Money[] ): Money {
 
-        const pairs: Array<Money> = Array.from(rest);
+        const monies: Array<Money> = Array.from(rest);
         let total: Money = first
 
-        for (let next of pairs) {
+        for (let next of monies) {
             if (next.currency !== total.currency) {
                 throw new Incalculable()
             }
         }
 
-        for (const next of pairs) {
+        for (const next of monies) {
             total = new Money(total.value + next.value, next.currency)
         }
 
