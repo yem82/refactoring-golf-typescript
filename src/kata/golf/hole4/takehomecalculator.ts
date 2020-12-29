@@ -1,5 +1,6 @@
 import {Incalculable} from "./incalculable";
-import {money, Money } from "./money";
+import {money, Money} from "./money";
+
 export class Takehomecalculator {
     private readonly percent: number;
 
@@ -22,7 +23,7 @@ export class Takehomecalculator {
         if (total.currency !== tax.currency) {
             throw new Incalculable();
         }
-        return new Money(total.value - tax.value, first.currency)
+        return total.minus(tax);
     }
 
 }

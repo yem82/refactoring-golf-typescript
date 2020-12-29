@@ -9,6 +9,13 @@ class Money {
         this.currency = currency;
     }
 
+    minus(other: Money): Money {
+        if (other.currency !== this.currency) {
+            throw new Incalculable();
+        }
+        return new Money(this.value - other.value, other.currency)
+    }
+
     plus(other: Money): Money {
         if (other.currency !== this.currency) {
             throw new Incalculable();
